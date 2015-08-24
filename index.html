@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>study plan</title>
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        
+        #big {
+            margin: auto;
+            width: 550px;
+        }
+        
+        .aPlan {
+            height: 50px;
+            width: 100px;
+            border: 1px solid black;
+            background: lightgreen;
+            border-radius: 50%;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        
+        #one {
+            height: 620px;
+            width: 30px;
+            border: 1px solid black;
+            float: left;
+            background: #ccc;
+            text-align: center;
+            margin: 10px 0 0 50px;
+            border-radius: 5px;
+        }
+        
+        #two {
+            float: left;
+        }
+        
+        #other {
+            clear: left;
+            padding-top: 50px;            
+        }
+        #other p {
+            margin: 0;
+        }
+        
+        #one p {
+            margin: 220px 0;
+            font-size: 25px;
+        }
+        
+        #content {
+            float: left;
+            height: 300px;
+            width: 250px;
+            border: 1px solid black;
+            margin-top: 180px;
+            background: orange;
+            border-radius: 20px;
+        }
+        
+        h1 {
+            margin-top: 40px;
+            margin-left: 15px;
+        }
+        
+        .active {
+            background: orange;
+            height: 50px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin: 10px 20px;
+            text-align: center;
+        }
+        
+        #content h2 p {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 45px;
+        }
+        
+        #content p {
+            text-align: left;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var arr = [
+                "学了基础，还未深入",
+                "学了基础，还未深入",
+                "学了基础，渐入佳境",
+                "没开始学",
+                "初学",
+                "没开始学",
+                "没开始学",
+                "初窥",
+                "未学",
+                "初识，不熟练！"
+            ];
+            var odiv = document.getElementById("two");
+            var oli = odiv.getElementsByTagName("div");
+            var div1 = document.getElementById("content");
+            for (var i = 0; i < oli.length; i++) {
+
+                oli[i].index = i;
+                oli[i].onmouseover = function () {
+                    for (var j = 0; j < oli.length; j++) {
+                        oli[j].className = "aPlan";
+                    }
+                    this.className = "active";
+                    div1.innerHTML = '<h2>' + oli[this.index].innerHTML + '</h2><p>' + arr[this.index] + '</p>';
+                };
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="big">
+        <div id="one">
+            <p>初步学习目录</p>
+        </div>
+        <div id="two">
+            <div class="aPlan">
+                <p>HTML5</p>
+            </div>
+            <div class="aPlan">
+                <p>CSS3</p>
+            </div>
+            <div class="aPlan">
+                <p>JavaScript</p>
+            </div>
+            <div class="aPlan">
+                <p>Bootstrap</p>
+            </div>
+            <div class="aPlan">
+                <p>jQuery</p>
+            </div>
+            <div class="aPlan">
+                <p>coffeejs</p>
+            </div>
+            <div class="aPlan">
+                <p>meteor.js</p>
+            </div>
+            <div class="aPlan">
+                <p>gulp,sass</p>
+            </div>
+            <div class="aPlan">
+                <p>mongoDB</p>
+            </div>
+            <div class="aPlan">
+                <p>Reg Express</p>
+            </div>
+        </div>
+        <div id="content">
+            <h1>The beginning is difficult!</h1>
+            <h1>The future is beautiful!</h1>
+        </div>
+    </div>
+    <div id="other">
+        <p>学习盲打，初有成效</p>
+        <p>学习linux，倍感艰辛</p>
+    </div>
+</body>
+
+</html>
